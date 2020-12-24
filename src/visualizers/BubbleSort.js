@@ -89,7 +89,7 @@ function BubbleSort() {
             <div className={`bubble-container flex items-end space-x-1 xl:space-x-2 justify-center`}>
                 {
                     array.map((val, index) => {
-                        return <div key={index} className={`${LINE_BUBBLE} rounded-t w-1 sm:w-2 lg:w-4`} style={{
+                        return <div key={index} className={`${LINE_BUBBLE} rounded-t w-1 sm:w-2 lg:w-3`} style={{
                             height: `${val}px`,
                             backgroundColor: 'grey'}}/>
                     })

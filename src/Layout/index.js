@@ -4,7 +4,7 @@ const Layout = ({children, className}) => {
     return (
         <div className={"relative"}>
             <Navbar/>
-            <div className={className ? `${className} pt-20` : `pt-20`}>
+            <div>
                 {children}
             </div>
         </div>

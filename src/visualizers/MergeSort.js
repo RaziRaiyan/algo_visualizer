@@ -6,10 +6,8 @@ let animationDuration = 1;
 
 const PRIMARY_COLOR = 'rgba(96, 165, 250)';
 const SECONDARY_COLOR = 'rgba(52, 211, 153)';
-const PIVOT_COLOR = 'rgba(236, 72, 153)'
 const PRIMARY_SHADOW = '0px 0px 3px 2px blue';
 const SECONDARY_SHADOW = '0px 0px 3px 2px green';
-const PIVOT_SHADOW = '0px 0px 3px 2px rgba(249, 168, 212)'
 
 const LINE_MERGE = "LINE_MERGE";
 
@@ -61,11 +59,15 @@ function MergeSort() {
                 array[k] = L[i];
                 lines[k].style.backgroundColor = PRIMARY_COLOR;
                 lines[i+l].style.backgroundColor = SECONDARY_COLOR;
+                lines[k].style.boxShadow = PRIMARY_SHADOW;
+                lines[i+l].style.boxShadow = SECONDARY_SHADOW;
                 lines[k].style.height = `${L[i]}px`;
                 await sleep(animationDuration*5);
 
                 lines[k].style.backgroundColor = 'grey';
                 lines[i+l].style.backgroundColor = 'grey';
+                lines[k].style.boxShadow = null;
+                lines[i+l].style.boxShadow = null;
                 await sleep(animationDuration*5);
                 i++;
             }
@@ -73,11 +75,15 @@ function MergeSort() {
                 array[k] = R[j];
                 lines[k].style.backgroundColor = PRIMARY_COLOR;
                 lines[j+m].style.backgroundColor = SECONDARY_COLOR;
+                lines[k].style.boxShadow = PRIMARY_SHADOW;
+                lines[j+m].style.boxShadow = SECONDARY_SHADOW;
                 lines[k].style.height = `${R[j]}px`;
                 await sleep(animationDuration*5);
 
                 lines[k].style.backgroundColor = 'grey';
                 lines[j+m].style.backgroundColor = 'grey';
+                lines[k].style.boxShadow = null;
+                lines[j+m].style.boxShadow = null;
                 await sleep(animationDuration*5);
                 j++;
             }
@@ -88,11 +94,15 @@ function MergeSort() {
             array[k] = L[i];
             lines[k].style.backgroundColor = PRIMARY_COLOR;
             lines[i+l].style.backgroundColor = SECONDARY_COLOR;
+            lines[k].style.boxShadow = PRIMARY_SHADOW;
+            lines[i+l].style.boxShadow = SECONDARY_SHADOW;
             lines[k].style.height = `${L[i]}px`;
             await sleep(animationDuration*5);
 
             lines[k].style.backgroundColor = 'grey';
             lines[i+l].style.backgroundColor = 'grey';
+            lines[k].style.boxShadow = null;
+            lines[i+l].style.boxShadow = null;
             await sleep(animationDuration*5);
             i++;
             k++;
@@ -102,11 +112,15 @@ function MergeSort() {
             array[k] = R[j];
             lines[k].style.backgroundColor = PRIMARY_COLOR;
             lines[j+m].style.backgroundColor = SECONDARY_COLOR;
+            lines[k].style.boxShadow = PRIMARY_SHADOW;
+            lines[j+m].style.boxShadow = SECONDARY_SHADOW;
             lines[k].style.height = `${R[j]}px`;
             await sleep(animationDuration*5);
 
             lines[k].style.backgroundColor = 'grey';
             lines[j+m].style.backgroundColor = 'grey';
+            lines[k].style.boxShadow = null;
+            lines[j+m].style.boxShadow = null;
             await sleep(animationDuration*5);
             j++;
             k++;
@@ -144,7 +158,7 @@ function MergeSort() {
             <div className={"line-container flex items-end space-x-1 xl:space-x-2 justify-center"}>
                 {
                     array.map((val, index) => {
-                        return <div key={index} className={`${LINE_MERGE} rounded-t w-1 sm:w-2 lg:w-4`}  style={{
+                        return <div key={index} className={`${LINE_MERGE} rounded-t w-1 sm:w-2 lg:w-3`}  style={{
                             height: `${val}px`,
                             backgroundColor: 'grey'}}/>
                     })
