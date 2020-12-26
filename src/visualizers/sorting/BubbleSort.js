@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import {sleep} from "../helpers";
-import Slider from "../components/Slider";
+import {sleep} from "../../helpers";
+import Slider from "../../components/Slider";
 
 let animationDuration = 1;
 

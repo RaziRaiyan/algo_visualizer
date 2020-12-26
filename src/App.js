@@ -1,23 +1,16 @@
 import React from "react";
-import BubbleSort from "./visualizers/BubbleSort";
-import InsertionSort from "./visualizers/InsertionSort";
 import Layout from "./Layout";
-import QuickSort from "./visualizers/QuickSort";
-import MergeSort from "./visualizers/MergeSort";
+import {Route} from "react-router-dom";
+import Sorting from "./screens/Sorting";
+import {paths} from "./paths";
+import PathFinder from "./visualizers/pathfinder";
 
 function App() {
   return (
       <Layout>
-          <div className={"w-full flex"}>
-              <div className={"w-1/6 bg-gray-900 mt-16"}>
-
-              </div>
-              <div className={"w-5/6 h-screen overflow-y-scroll space-y-8 px-4 pt-20"}>
-                  <BubbleSort/>
-                  <InsertionSort/>
-                  <QuickSort/>
-                  <MergeSort/>
-              </div>
+          <div className={"w-full"}>
+              <Route path={"/"} exact component={Sorting}/>
+              <Route path={paths.pathfinder} exact component={PathFinder}/>
           </div>
       </Layout>
   )
